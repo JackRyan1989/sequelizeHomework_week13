@@ -12,10 +12,6 @@ const htmlRoutes = require('./app/routing/htmlRoutes');
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-app.get('/', function(req, res){
-    res.send('')
-});
-
 //Some error handling:
 app.use(function (err, req, res, next) {
     console.error(err);

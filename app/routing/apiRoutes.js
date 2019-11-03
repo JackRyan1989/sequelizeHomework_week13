@@ -1,12 +1,12 @@
-const router = require('express').Router();
+const apiRouter = require('express').Router();
 const friends = require('../data/friends');
 
-router.get('/friends', function(req, res){
+apiRouter.get('/friends', function(req, res){
     res.json(friends);
 });
 
-router.post('/friends', function(req, res){
-//
+apiRouter.post('/friends', function(req, res){
+//Logic for friend matching here
 });
 
-module.exports = router;
+module.exports = apiRouter;
