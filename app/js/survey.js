@@ -50,11 +50,19 @@ $(document).ready(function () {
         };
 
         $.get('/api/friends', function (data) {
-            console.log(answers);
-                $.post('/api/friends', answers).then(function (data) {
-                    alert("Survey completed!");
-                });
+            $.post('/api/friends', answers).then(function (data, err, myFriend) {
+                console.log(myFriend.responseJSON);
+                friendName = myFriend.responseJSON.name;
+                friendPic = myFriend.responseJSON.photo;
+                nameDiv = $("<div>").append("<h2>").addClass('text-center').text(friendName);
+                pic = $("<img>").attr("src", friendPic);
+                picDiv = $("<div>").append(pic);
+                $(".modal-content").append(nameDiv).append(picDiv);
+                $("#friendTitle").text(`${answers.name}: Your new friend is:`);
+                $("#friendModal").modal('show');
+            });
         });
+
 
     });
 });
