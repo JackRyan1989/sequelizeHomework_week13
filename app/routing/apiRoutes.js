@@ -34,6 +34,7 @@ apiRouter.post('/friends', function (req, res) {
      } 
      foundFriend = diffArr.indexOf(smallest);
      myFriend = friends[foundFriend];
+     console.log(myFriend);
 });
 
 module.exports = apiRouter;
