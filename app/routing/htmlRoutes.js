@@ -2,7 +2,7 @@ const htmlRouter = require('express').Router();
 const path = require('path');
 const friends = require('../data/friends');
 
-htmlRouter.get('/home', function(req, res){
+htmlRouter.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../public/', 'home.html'));
 });
 
