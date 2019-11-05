@@ -55,7 +55,7 @@ $(document).ready(function () {
                 friendName = myFriend.responseJSON.name;
                 friendPic = myFriend.responseJSON.photo;
                 nameDiv = $("<div>").append("<h2>").addClass('text-center').text(friendName);
-                pic = $("<img>").attr("src", friendPic);
+                pic = $("<img>").attr("src", friendPic).addClass('w-50').addClass('mx-auto').addClass('d-block');
                 picDiv = $("<div>").append(pic);
                 $(".modal-content").append(nameDiv).append(picDiv);
                 $("#friendTitle").text(`${answers.name}: Your new friend is:`);
